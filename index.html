@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>quinn.ie — small, useful things from Galway</title>
+  <meta name="description" content="Personal website of Andy Quinn" />
+  <link rel="canonical" href="https://quinn.ie/" />
+  <meta property="og:title" content="quinn.ie" />
+  <meta property="og:description" content="Personal website of Andy Quinn" />
+  <meta property="og:url" content="https://quinn.ie/" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23196c4e'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "quinn.ie",
+    "url": "https://quinn.ie",
+    "description": "Personal website of Andy Quinn"
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --ink: #1c2321;
+      --muted: #5c6660;
+      --card: #ffffff;
+      --line: #e5e0d6;
+      --accent: #196c4e;
+      --accent-soft: #eaf3ee;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121614;
+        --ink: #edeae3;
+        --muted: #9aa49e;
+        --card: #1a201d;
+        --line: #2a322e;
+        --accent: #5cc294;
+        --accent-soft: #1e2b25;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 ui-serif, Georgia, "Times New Roman", serif;
+      display: flex;
+      min-height: 100svh;
+      flex-direction: column;
+    }
+    main {
+      width: min(44rem, 100% - 3rem);
+      margin: 0 auto;
+      flex: 1;
+    }
+    .hero { padding: 5rem 0 3rem; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .tld { color: var(--accent); }
+    .hero p {
+      margin-top: 0.9rem;
+      max-width: 34rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .sites {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+      padding-bottom: 4rem;
+    }
+    @media (min-width: 34rem) {
+      .sites { grid-template-columns: 1fr 1fr; }
+    }
+    .sites a {
+      display: block;
+      height: 100%;
+      padding: 1.4rem 1.5rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .sites a:hover, .sites a:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .sites h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .sites .domain {
+      display: block;
+      margin: 0.15rem 0 0.6rem;
+      font: 0.78rem/1.4 ui-monospace, "SF Mono", Menlo, monospace;
+      color: var(--muted);
+    }
+    .sites p { font-size: 0.95rem; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0 2.5rem;
+    }
+    footer p {
+      width: min(44rem, 100% - 3rem);
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <h1>quinn<span class="tld">.ie</span></h1>
+      <p>Personal website of Andy Quinn</p>
+      <p>Here are some personal projects I'm working on</p>
+    </header>
+
+    <ul class="sites">
+      <li>
+        <a href="https://fogra.quinn.ie">
+          <h2>Fógra</h2>
+          <span class="domain">fogra.quinn.ie</span>
+          <p>A free planning map of Galway City and County. Planning
+          applications, appeals and construction notices near you,
+          explained in plain English.</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://mortar.quinn.ie">
+          <h2>Mortar</h2>
+          <span class="domain">mortar.quinn.ie</span>
+          <p>The stuff that binds a build together. Track a deep home
+          renovation or retrofit - decisions, documents, contacts and
+          items in one place. Invite only for now.</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://ainle.quinn.ie">
+          <h2>Áinle</h2>
+          <span class="domain">ainle.quinn.ie</span>
+          <p>Daily Irish translation practice. A little Gaeilge,
+          every day.</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://thecave.quinn.ie">
+          <h2>The Cave</h2>
+          <span class="domain">thecave.quinn.ie</span>
+          <p>A web based platform game.</p>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>
+      © Andy Quinn · Galway, Ireland ·
+      <a href="mailto:andy.b.quinn@gmail.com">andy.b.quinn@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/andy-quinn-020010197" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>
