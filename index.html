@@ -349,12 +349,13 @@
       :root { --wrap: min(1240px, 100% - 1.9rem); }
       .topbar__place, .topbar__cta { display: none; }
       .hero__inner { grid-template-columns: minmax(0, 1fr); padding: 2.6rem 0 6rem; min-height: 0; }
-      /* the text sits over the photo here, so hold the image right back behind it
-         and let it come up to full strength below the copy */
+      /* Short top-to-bottom fade: a light paper veil (~0.4 image) held across the
+         top where the text sits, then a brief ramp to the full photo below it —
+         less washed-out and much shorter than a full-height fade. */
       .hero__media img {
         object-position: 72% 46%;
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 76%, #000 92%);
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 76%, #000 92%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.42) 46%, #000 66%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.42) 46%, #000 66%);
       }
       .hero__text p:not(.hero__slogan) { color: var(--ink); }
       .hero__dash { display: none; }
@@ -450,9 +451,6 @@
           <svg class="brush" viewBox="0 0 240 10" preserveAspectRatio="none" aria-hidden="true">
             <path d="M2,5.4 C48,1.2 92,7.6 132,3.4 C172,-0.6 206,5.6 238,2.2 L238,6.4 C206,10.2 172,4.4 132,7.4 C92,10.6 48,5.6 2,9.4 Z" />
           </svg>
-
-          <p>Personal website of Andy Quinn.</p>
-          <p>Here are some personal projects I&rsquo;m working on.</p>
         </div>
 
       </div>
