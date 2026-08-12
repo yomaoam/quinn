@@ -276,7 +276,7 @@
 
     @media (max-width: 860px) {
       :root { --wrap: min(1240px, 100% - 1.9rem); }
-      .hero__inner { grid-template-columns: minmax(0, 1fr); padding: 2.6rem 0 6rem; min-height: 0; }
+      .hero__inner { grid-template-columns: minmax(0, 1fr); padding: 2.6rem 0 6rem; min-height: clamp(28rem, 78vh, 44rem); }
       /* Short top-to-bottom fade: a light paper veil (~0.4 image) held across the
          top where the text sits, then a brief ramp to the full photo below it —
          less washed-out and much shorter than a full-height fade. */
