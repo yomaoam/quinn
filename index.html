@@ -149,9 +149,6 @@
     .hero__text p:not(.hero__slogan) { max-width: 27rem; color: var(--ink-soft); font-size: 1.06rem; }
     .hero__text p + p { margin-top: 0.95rem; }
 
-    .hero__dash { position: absolute; left: 0; right: 0; top: 46%; z-index: -1; width: 100%; height: 175px; pointer-events: none; }
-    .hero__dash path { fill: none; stroke: var(--rust); stroke-width: 3; stroke-dasharray: 13 11; stroke-linecap: round; opacity: 0.85; }
-
     /* ── projects ──────────────────────────────────────────────────────── */
     .projects { position: relative; padding: 1rem 0 2rem; }
     .projects__bg {
@@ -286,7 +283,6 @@
         mask-image: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.42) 46%, #000 66%);
       }
       .hero__text p:not(.hero__slogan) { color: var(--ink); }
-      .hero__dash { display: none; }
       .footer__elev { margin-left: 0; }
       .footer__elev svg { display: none; }
     }
@@ -311,7 +307,7 @@
     }
 
     @media print {
-      .projects__bg, .connect, .hero__dash { display: none; }
+      .projects__bg, .connect { display: none; }
     }
   </style>
 </head>
@@ -334,10 +330,6 @@
       <div class="hero__media">
         <img src="assets/hero-trail.webp" width="1800" height="886" alt="A trail runner climbing a rocky path high in the Tatra mountains in summer." fetchpriority="high" />
       </div>
-
-      <svg class="hero__dash" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M545,146 C640,58 740,16 852,54 C960,90 1010,150 1120,163 C1235,176 1330,150 1440,104" />
-      </svg>
 
       <div class="hero__inner">
         <div class="hero__text">
