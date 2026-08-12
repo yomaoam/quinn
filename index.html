@@ -110,78 +110,8 @@
        both dimensions must be set or it stretches to fill its flex line */
     .icon { flex: none; }
 
-    /* ── header ────────────────────────────────────────────────────────── */
-    .topbar {
-      position: sticky;
-      top: 0.7rem;
-      z-index: 60;
-      width: var(--wrap);
-      margin: 0.7rem auto 0;
-    }
-    .topbar__pill {
-      display: flex;
-      align-items: center;
-      gap: 1.15rem;
-      padding: 0.72rem 1.15rem 0.72rem 1.35rem;
-      background: var(--paper-hi) url("assets/paper.webp") repeat;
-      background-size: 420px;
-      background-blend-mode: luminosity;
-      border: 1px solid rgba(26, 34, 23, 0.13);
-      border-radius: 13px;
-      box-shadow: 0 2px 0 rgba(26, 34, 23, 0.05), 0 14px 34px -18px rgba(26, 34, 23, 0.5);
-    }
-    .wordmark {
-      font-family: var(--display);
-      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-      letter-spacing: -0.005em;
-      line-height: 1;
-      text-decoration: none;
-      color: var(--ink);
-      -webkit-mask-image: var(--distress);
-      mask-image: var(--distress);
-      -webkit-mask-size: 120px;
-      mask-size: 120px;
-    }
-    .topbar__place { display: flex; align-items: center; gap: 0.5rem; color: var(--ink); }
-    .topbar__place svg { width: 15px; color: var(--rust); flex: none; }
-    .topbar__spacer { margin-left: auto; }
-    .topbar__cta {
-      display: flex; align-items: center; gap: 0.6rem;
-      color: var(--rust); text-decoration: none;
-    }
-    .topbar__cta svg { width: 27px; height: 17px; flex: none; }
-    .topbar__cta:hover { color: var(--rust-deep); }
-
-    .burger {
-      display: grid; gap: 4.5px; align-content: center;
-      width: 30px; height: 26px; padding: 0;
-      background: none; border: 0; cursor: pointer;
-    }
-    .burger span { display: block; height: 2.6px; background: var(--ink); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.1px) rotate(45deg); }
-    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.1px) rotate(-45deg); }
-
-    .menu {
-      position: absolute; right: 0; top: calc(100% + 0.5rem);
-      min-width: 15rem;
-      display: none;
-      padding: 0.55rem;
-      background: var(--paper-hi);
-      border: 1px solid rgba(26, 34, 23, 0.16);
-      border-radius: 11px;
-      box-shadow: 0 18px 40px -20px rgba(26, 34, 23, 0.65);
-    }
-    .menu[data-open="true"] { display: block; }
-    .menu a {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-      padding: 0.6rem 0.7rem; border-radius: 7px; text-decoration: none;
-    }
-    .menu a:hover { background: rgba(172, 74, 35, 0.1); }
-    .menu a span:last-child { font: 400 0.72rem/1 var(--ui); color: var(--ink-mute); }
-
     /* ── hero ──────────────────────────────────────────────────────────── */
-    .hero { position: relative; margin-top: -4.9rem; padding-top: 4.9rem; isolation: isolate; }
+    .hero { position: relative; isolation: isolate; }
 
     .hero__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
     .hero__media img {
@@ -223,8 +153,7 @@
     .hero__dash path { fill: none; stroke: var(--rust); stroke-width: 3; stroke-dasharray: 13 11; stroke-linecap: round; opacity: 0.85; }
 
     /* ── projects ──────────────────────────────────────────────────────── */
-    /* scroll-margin keeps the heading clear of the sticky bar on #projects jumps */
-    .projects { position: relative; padding: 1rem 0 2rem; scroll-margin-top: 5.5rem; }
+    .projects { position: relative; padding: 1rem 0 2rem; }
     .projects__bg {
       position: absolute; inset: 0; z-index: 0;
       background: url("assets/contours.svg") repeat;
@@ -347,7 +276,6 @@
 
     @media (max-width: 860px) {
       :root { --wrap: min(1240px, 100% - 1.9rem); }
-      .topbar__place, .topbar__cta { display: none; }
       .hero__inner { grid-template-columns: minmax(0, 1fr); padding: 2.6rem 0 6rem; min-height: 0; }
       /* Short top-to-bottom fade: a light paper veil (~0.4 image) held across the
          top where the text sits, then a brief ramp to the full photo below it —
@@ -383,7 +311,7 @@
     }
 
     @media print {
-      .topbar, .projects__bg, .connect, .hero__dash { display: none; }
+      .projects__bg, .connect, .hero__dash { display: none; }
     }
   </style>
 </head>
@@ -399,39 +327,7 @@
     <symbol id="i-arrow" viewBox="0 0 24 24">
       <path d="M3 12h17M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
-    <symbol id="i-mtn" viewBox="0 0 30 18">
-      <path d="M1.5 16.5 L9 3 L13.6 10.2 L17 5.6 L28.5 16.5 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
-    </symbol>
   </svg>
-
-  <header class="topbar">
-    <div class="topbar__pill">
-      <a class="wordmark" href="#top">quinn.ie</a>
-
-      <span class="topbar__place">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-6.4 8-12a8 8 0 1 0-16 0c0 5.6 8 12 8 12Z" fill="currentColor"/><circle cx="12" cy="9.6" r="3.1" fill="#fbeed4"/></svg>
-        <span class="label">Galway, Ireland</span>
-      </span>
-
-      <span class="topbar__spacer"></span>
-
-      <a class="topbar__cta label" href="#projects">
-        View projects
-        <svg aria-hidden="true"><use href="#i-mtn" /></svg>
-      </a>
-
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="menu" id="menu" data-open="false" aria-label="Projects">
-        <a href="https://fogra.quinn.ie"><span>Fógra</span><span>fogra.quinn.ie</span></a>
-        <a href="https://mortar.ie"><span>Mortar</span><span>mortar.ie</span></a>
-        <a href="https://ainle.quinn.ie"><span>Áinle</span><span>ainle.quinn.ie</span></a>
-        <a href="https://thecave.quinn.ie"><span>The Cave</span><span>thecave.quinn.ie</span></a>
-      </nav>
-    </div>
-  </header>
 
   <main id="top">
     <section class="hero">
@@ -621,30 +517,5 @@
       </span>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      var burger = document.querySelector('.burger');
-      var menu = document.getElementById('menu');
-
-      function setOpen(open) {
-        menu.dataset.open = String(open);
-        burger.setAttribute('aria-expanded', String(open));
-        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      }
-
-      burger.addEventListener('click', function () {
-        setOpen(menu.dataset.open !== 'true');
-      });
-
-      document.addEventListener('click', function (e) {
-        if (menu.dataset.open === 'true' && !menu.contains(e.target) && !burger.contains(e.target)) setOpen(false);
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && menu.dataset.open === 'true') { setOpen(false); burger.focus(); }
-      });
-    })();
-  </script>
 </body>
 </html>
