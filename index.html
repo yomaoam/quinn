@@ -134,7 +134,7 @@
       display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 2rem;
       padding: 3.4rem 0 7.5rem;
-      min-height: 34rem;
+      min-height: clamp(34rem, 22vw, 44rem);
     }
     .hero__text { max-width: 33rem; }
     .hero h1 { font-size: clamp(3rem, 8.6vw, 6.6rem); color: var(--ink); }
