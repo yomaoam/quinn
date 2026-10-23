@@ -14,10 +14,11 @@ subdomains. Hosted on GitHub Pages; `index.html` is the whole site, with
 
 ## Never do these
 
-- **Never merge into `main`, force-push, rewrite pushed history, or delete a
-  branch without Andy's go-ahead.** Otherwise the agent handles git: a branch
-  per non-trivial change, one Conventional Commit per logical change, push,
-  and a PR via `gh`.
+- **Never force-push, rewrite pushed history, or delete a branch (other than
+  a PR branch you just merged) without Andy's go-ahead.** Otherwise the agent
+  handles git: a branch per non-trivial change, one Conventional Commit per
+  logical change, push, a PR via `gh`, and merging that PR once its checks
+  pass.
 - No build step and no npm dependencies: `index.html` stays the whole site.
 - Never remove or change `CNAME` or `.nojekyll`; the live domain depends on them.
 
